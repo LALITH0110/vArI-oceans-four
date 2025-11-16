@@ -46,6 +46,76 @@ A reproducible judge-ready build now takes a handful of commands. Expect roughly
 4. Review the resulting 1080p H.264 MP4, hero PNG (`results/figures/hero.png`), and `docs/onepager.pdf`.
 5. Adjust style options in `driftcast/viz/style.py` as needed for competition polish.
 
+## Showcase Animations
+
+Bring the North Atlantic story to life with the new scripted animation suite (all commands accept `--seed` for deterministic runs):
+
+- Gyre convergence spotlight:
+  ```bash
+  driftcast animate gyre --config configs/natl_subtropical_gyre.yaml --days 180 --preset microplastic_default
+  ```
+- Source mix storyteller with fading legend:
+  ```bash
+  driftcast animate sources --config configs/natl_subtropical_gyre.yaml --days 90 --legend-fade-in
+  ```
+- Beaching timelapse and gyre backtrack:
+  ```bash
+  driftcast animate beaching --config configs/natl_subtropical_gyre.yaml --days 90
+  driftcast animate backtrack --config configs/natl_subtropical_gyre.yaml --days-back 30
+  ```
+- Ekman toggle comparison:
+  ```bash
+  driftcast animate ekman --config configs/natl_subtropical_gyre.yaml --days 120
+  ```
+- Long-cut narrative (2-10 minutes) with optional captions and parameter sweep mosaic:
+  ```bash
+  driftcast animate long --config configs/natl_subtropical_gyre.yaml --minutes 5 --captions docs/script.srt
+  driftcast animate sweep --config configs/natl_subtropical_gyre.yaml --param windage=0.001,0.005,0.01 --param Kh=15,30,60
+  ```
+
+Final MP4s land in `results/videos/` (preview: 720p, hero cuts: 1080p with watermark-safe overlays).
+
+## Figure Gallery
+
+Run the figure CLI to populate both `results/figures/` and `docs/assets/` with 16 publication-ready PNGs (selected SVGs are mirrored automatically):
+
+```bash
+driftcast plots all --run results/outputs/simulation.nc --config configs/natl_subtropical_gyre.yaml --sweep results/batch --compare-run results/outputs/simulation_macro.nc
+```
+
+For a lightweight subset, use `driftcast plots key --run ... --config ...` to capture the six hero figures shared in presentations.
+
+Representative outputs (names correspond to the saved filenames):
+
+- `accumulation_heatmap_<run>.png` – Sargasso Sea convergence heatmap with gyre center marker.
+- `time_series_<run>.png` – Afloat, beached, and gyre-contained particle counts vs. time.
+- `source_mix_<run>.png` – Final source composition pie chart.
+- `beaching_hotspots_<run>.png` – Coastal choropleth of sustained strandings.
+- `density_vs_distance_<run>.png` – Radial density curve relative to the gyre core.
+- `parameter_sweep_<dir>.png` – Windage/Kh sweep matrix coloured by gyre fraction.
+- `gyre_fraction_curve_<run>.png` – Logistic fit showing convergence toward the gyre box.
+- `curvature_cdf_<run>.png` – CDF proving paths are curved rather than ballistic.
+- `ekman_vs_noekman_<runA>_<runB>.png` – Side-by-side accumulation with and without Ekman drift.
+- `seasonal_ramp_effect_<runA>_<runB>.png` – Gyre occupancy with the seasonal ramp toggled.
+
+These assets double as the “Figure Gallery” section on the competition microsite and can be dropped directly into slide decks.
+
+## Validation
+
+Run the validation helper to compute golden numbers and sanity-check physics:
+
+```bash
+driftcast validate run --run results/outputs/simulation.nc --out results/validation/report.json
+```
+
+The JSON report echoes the manifest and records:
+- Final gyre fraction (inside the configurable 20–40°N, 70–30°W box)
+- Mean surface speed and percent beached
+- Median residence time for afloat particles
+- Curvature index (mean and 95th percentile) demonstrating sustained swirling
+
+`driftcast plots extra` visualises the gyre fraction trajectory, curvature CDF, and comparisons for Ekman/seasonal toggles so you can interpret changes at a glance.
+
 ## Scaling Up with Dask
 
 - For parameter sweeps on a laptop, use:

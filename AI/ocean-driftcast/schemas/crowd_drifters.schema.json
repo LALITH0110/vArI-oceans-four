@@ -1,0 +1,54 @@
+
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://oceans-four.example.com/schemas/crowd_drifters.schema.json",
+  "title": "Crowdsourced Drift Observation",
+  "description": "Schema for community-submitted plastic drift observations.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "timestamp",
+    "lat",
+    "lon",
+    "observed_item_type",
+    "est_size_mm",
+    "notes"
+  ],
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "UTC timestamp of the observation."
+    },
+    "lat": {
+      "type": "number",
+      "minimum": -90,
+      "maximum": 90,
+      "description": "Latitude in decimal degrees (north positive)."
+    },
+    "lon": {
+      "type": "number",
+      "minimum": -180,
+      "maximum": 180,
+      "description": "Longitude in decimal degrees (east positive)."
+    },
+    "observed_item_type": {
+      "type": "string",
+      "description": "Free-text description or controlled vocabulary for the item."
+    },
+    "est_size_mm": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Estimated size of the item in millimetres."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional context, location details, or provenance."
+    },
+    "photo_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Optional link to a supporting photo."
+    }
+  }
+}

@@ -1,0 +1,78 @@
+# File Summary:
+# - Poetry-style metadata and tooling configuration for the driftcast package.
+# - Declares core dependencies, optional extras, and CLI entry point wiring.
+# - Houses formatting/linting settings for black, isort, and ruff.
+
+[build-system]
+requires = ["setuptools>=67", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "driftcast"
+version = "0.1.0"
+description = "Synthetic North Atlantic plastic drift simulator and visualization toolkit."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [
+  {name = "Oceans Four Driftcast Team"}
+]
+dependencies = [
+  "numpy>=1.25,<2.0",
+  "scipy>=1.11,<2.0",
+  "pandas>=2.0,<3.0",
+  "xarray>=2023.8",
+  "dask[distributed]>=2023.8",
+  "pyyaml>=6.0,<7.0",
+  "pydantic>=2.6,<3.0",
+  "typer[all]>=0.9,<1.0",
+  "loguru>=0.7,<1.0",
+  "jsonschema>=4.18,<5.0",
+  "pyarrow>=11.0,<15.0",
+  "cartopy>=0.22,<0.23",
+  "matplotlib>=3.8,<4.0",
+  "shapely>=2.0,<3.0",
+  "pyproj>=3.5,<4.0",
+  "netCDF4>=1.6,<2.0",
+  "zarr>=2.16,<3.0",
+  "imageio>=2.31,<3.0",
+  "tqdm>=4.65,<5.0",
+  "numba>=0.57,<1.0",
+  "ffmpeg-python>=0.2,<0.3",
+  "markdown>=3.4,<4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.4,<8.0",
+  "pytest-cov>=4.1,<5.0",
+  "pre-commit>=3.4,<4.0",
+  "ruff>=0.1.0,<0.2.0",
+  "black>=23.7,<24.0",
+  "isort>=5.12,<6.0",
+  "docformatter>=1.7,<1.8",
+]
+viz = ["moviepy>=1.0,<2.0"]
+
+[project.urls]
+Homepage = "https://github.com/oceans-four/driftcast"
+Documentation = "docs/index.md"
+
+[project.scripts]
+driftcast = "driftcast.cli:entrypoint"
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.ruff]
+select = ["E", "F", "W", "B", "I"]
+line-length = 100
+target-version = "py310"
+
+[tool.setuptools.packages.find]
+include = ["driftcast*"]

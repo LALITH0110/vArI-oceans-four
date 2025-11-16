@@ -75,30 +75,52 @@ python -m driftcast.cli ingest normalize data/raw/mock_crowd.json --out-dir data
 python -m driftcast.cli run configs/natl_subtropical_gyre.yaml --seed 42
 ```
 
-## 9. Render preview and final animations
+## 9. Render preview, final, and highlight animations
 ```powershell
 python -m driftcast.cli animate preview configs/natl_coastal.yaml --seed 42
 python -m driftcast.cli animate final configs/natl_coastal.yaml --seed 42
+python -m driftcast.cli animate gyre --config configs/natl_subtropical_gyre.yaml --days 180 --preset microplastic_default --seed 42
+python -m driftcast.cli animate sources --config configs/natl_subtropical_gyre.yaml --days 90 --legend-fade-in --seed 42
+python -m driftcast.cli animate beaching --config configs/natl_subtropical_gyre.yaml --days 90 --seed 42
+python -m driftcast.cli animate backtrack --config configs/natl_subtropical_gyre.yaml --days-back 30 --seed 42
+python -m driftcast.cli animate long --config configs/natl_subtropical_gyre.yaml --minutes 5 --seed 42
+python -m driftcast.cli animate sweep --config configs/natl_subtropical_gyre.yaml --param windage=0.001,0.005,0.01 --param Kh=15,30,60 --seed 21
 ```
 
-## 10. Build the full judge deliverables bundle
+## 10. Generate the figure gallery
+```powershell
+python -m driftcast.cli plots all --run results/outputs/simulation.nc --config configs/natl_subtropical_gyre.yaml --sweep results/batch
+python -m driftcast.cli plots key --run results/outputs/simulation.nc --config configs/natl_subtropical_gyre.yaml
+```
+
+## 11. Run validation golden-number checks
+```powershell
+python -m driftcast.cli validate run --run results/outputs/simulation.nc --out results/validation/report.json
+```
+
+## 12. Build the full judge deliverables bundle
 ```powershell
 python -m driftcast.cli judge --config configs/natl_subtropical_gyre.yaml --seed 42
 ```
 
-## 11. Inspect generated artifacts
+## 13. Inspect generated artifacts
 - Videos: `results/videos/preview.mp4`, `results/videos/final_cut.mp4`
 - Hero frame: `results/figures/hero.png`
 - Simulation outputs: `results/outputs/` (NetCDF files with manifest sidecars)
 - Judge PDF: `docs/onepager.pdf`
 
-## 12. Optional diagnostics
+## 14. Optional diagnostics
 ```powershell
 python -m driftcast.cli perf check --config configs/natl_subtropical_gyre.yaml --seed 123
-python -m driftcast.cli sweep --config configs/natl_shipping.yaml --param physics.diffusivity_m2s=5,10 --seed 42
+python -m driftcast.cli sweep configs/natl_shipping.yaml --param physics.diffusivity_m2s=5,10 --seed 42
 ```
 
-## 13. Deactivate the environment when finished
+## 15. Package a release bundle for judges
+```powershell
+python -m driftcast.cli publish bundle --out release/
+```
+
+## 16. Deactivate the environment when finished
 ```powershell
 conda deactivate
 ```
