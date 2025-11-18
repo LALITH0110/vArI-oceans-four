@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(python test_fixes.py:*)",
+      "Bash(python:*)",
+      "Bash(timeout 120 python:*)",
+      "Bash(node tests/smoke-test.js:*)",
+      "Bash(node tests/smoke-test.cjs:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
