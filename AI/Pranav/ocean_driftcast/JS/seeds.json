@@ -1,0 +1,145 @@
+[
+  {
+    "city": "New York, NY, USA",
+    "lat": 40.7128,
+    "lon": -74.0060,
+    "region": "usa",
+    "type": "coastal"
+  },
+  {
+    "city": "Miami, FL, USA",
+    "lat": 25.7617,
+    "lon": -80.1918,
+    "region": "usa",
+    "type": "coastal"
+  },
+  {
+    "city": "Boston, MA, USA",
+    "lat": 42.3601,
+    "lon": -71.0589,
+    "region": "usa",
+    "type": "coastal"
+  },
+  {
+    "city": "Chicago, IL, USA",
+    "lat": 41.8781,
+    "lon": -87.6298,
+    "region": "usa",
+    "type": "inland",
+    "outlet": {"lat": 47.5, "lon": -52.5}
+  },
+  {
+    "city": "Philadelphia, PA, USA",
+    "lat": 39.9526,
+    "lon": -75.1652,
+    "region": "usa",
+    "type": "coastal"
+  },
+  {
+    "city": "Charleston, SC, USA",
+    "lat": 32.7765,
+    "lon": -79.9311,
+    "region": "usa",
+    "type": "coastal"
+  },
+  {
+    "city": "Norfolk, VA, USA",
+    "lat": 36.8508,
+    "lon": -76.2859,
+    "region": "usa",
+    "type": "coastal"
+  },
+  {
+    "city": "Portland, ME, USA",
+    "lat": 43.6591,
+    "lon": -70.2568,
+    "region": "usa",
+    "type": "coastal"
+  },
+  {
+    "city": "Toronto, ON, Canada",
+    "lat": 43.6532,
+    "lon": -79.3832,
+    "region": "canada",
+    "type": "inland",
+    "outlet": {"lat": 47.5, "lon": -52.5}
+  },
+  {
+    "city": "Halifax, NS, Canada",
+    "lat": 44.6488,
+    "lon": -63.5752,
+    "region": "canada",
+    "type": "coastal"
+  },
+  {
+    "city": "Montreal, QC, Canada",
+    "lat": 45.5017,
+    "lon": -73.5673,
+    "region": "canada",
+    "type": "inland",
+    "outlet": {"lat": 47.5, "lon": -52.5}
+  },
+  {
+    "city": "St. John's, NL, Canada",
+    "lat": 47.5615,
+    "lon": -52.7126,
+    "region": "canada",
+    "type": "coastal"
+  },
+  {
+    "city": "Lisbon, Portugal",
+    "lat": 38.7223,
+    "lon": -9.1393,
+    "region": "europe",
+    "type": "coastal"
+  },
+  {
+    "city": "Bordeaux, France",
+    "lat": 44.8378,
+    "lon": -0.5792,
+    "region": "europe",
+    "type": "coastal"
+  },
+  {
+    "city": "Dublin, Ireland",
+    "lat": 53.3498,
+    "lon": -6.2603,
+    "region": "europe",
+    "type": "coastal"
+  },
+  {
+    "city": "London, UK",
+    "lat": 51.5074,
+    "lon": -0.1278,
+    "region": "europe",
+    "type": "coastal"
+  },
+  {
+    "city": "Porto, Portugal",
+    "lat": 41.1579,
+    "lon": -8.6291,
+    "region": "europe",
+    "type": "coastal"
+  },
+  {
+    "city": "Casablanca, Morocco",
+    "lat": 33.5731,
+    "lon": -7.5898,
+    "region": "africa",
+    "type": "coastal"
+  },
+  {
+    "city": "Rabat, Morocco",
+    "lat": 34.0209,
+    "lon": -6.8416,
+    "region": "africa",
+    "type": "coastal"
+  },
+  {
+    "city": "Dakar, Senegal",
+    "lat": 14.6928,
+    "lon": -17.4467,
+    "region": "africa",
+    "type": "coastal"
+  }
+]

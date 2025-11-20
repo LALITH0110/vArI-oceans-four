@@ -1,0 +1,35 @@
+# Ocean Drift Visualization Demo - Requirements
+# Synthetic demo for presentation, not scientific output
+
+# Core numerical computing
+numpy>=1.21.0,<2.0.0
+
+# Visualization and plotting
+matplotlib>=3.5.0,<4.0.0
+
+# Geographic projections and mapping
+# Note: Cartopy can be difficult to install on some systems.
+# If pip installation fails, try: conda install -c conda-forge cartopy
+cartopy>=0.21.0,<1.0.0
+
+# Image processing and manipulation
+Pillow>=9.0.0,<11.0.0
+
+# Video export (includes FFmpeg)
+# The [ffmpeg] extra includes imageio-ffmpeg for MP4 export
+imageio[ffmpeg]>=2.25.0,<3.0.0
+
+# Scientific computing utilities
+scipy>=1.7.0,<2.0.0
+
+# Optional: Jupyter support for notebook examples
+# Uncomment if you want to use Jupyter notebooks
+# jupyter>=1.0.0
+# ipywidgets>=8.0.0
+
+# Development dependencies (optional)
+# Uncomment for development work
+# pytest>=7.0.0
+# black>=22.0.0
+# flake8>=4.0.0
+# mypy>=0.950
