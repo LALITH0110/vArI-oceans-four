@@ -1,0 +1,192 @@
+[
+  {
+    "city": "New York, NY, USA",
+    "lat": 40.7128,
+    "lon": -74.0060,
+    "type": "coastal",
+    "region": "usa"
+  },
+  {
+    "city": "Boston, MA, USA",
+    "lat": 42.3601,
+    "lon": -71.0589,
+    "type": "coastal",
+    "region": "usa"
+  },
+  {
+    "city": "Miami, FL, USA",
+    "lat": 25.7617,
+    "lon": -80.1918,
+    "type": "coastal",
+    "region": "usa"
+  },
+  {
+    "city": "Philadelphia, PA, USA",
+    "lat": 39.9526,
+    "lon": -75.1652,
+    "type": "coastal",
+    "region": "usa"
+  },
+  {
+    "city": "Baltimore, MD, USA",
+    "lat": 39.2904,
+    "lon": -76.6122,
+    "type": "coastal",
+    "region": "usa"
+  },
+  {
+    "city": "Charleston, SC, USA",
+    "lat": 32.7765,
+    "lon": -79.9311,
+    "type": "coastal",
+    "region": "usa"
+  },
+  {
+    "city": "Savannah, GA, USA",
+    "lat": 32.0809,
+    "lon": -81.0912,
+    "type": "coastal",
+    "region": "usa"
+  },
+  {
+    "city": "Chicago, IL, USA",
+    "lat": 41.8781,
+    "lon": -87.6298,
+    "type": "inland",
+    "region": "usa",
+    "outlet": {
+      "name": "St. Lawrence Seaway",
+      "lat": 48.4,
+      "lon": -69.2
+    }
+  },
+  {
+    "city": "Toronto, ON, Canada",
+    "lat": 43.6532,
+    "lon": -79.3832,
+    "type": "inland",
+    "region": "canada",
+    "outlet": {
+      "name": "St. Lawrence River",
+      "lat": 48.4,
+      "lon": -69.2
+    }
+  },
+  {
+    "city": "Montreal, QC, Canada",
+    "lat": 45.5017,
+    "lon": -73.5673,
+    "type": "inland",
+    "region": "canada",
+    "outlet": {
+      "name": "St. Lawrence River",
+      "lat": 48.4,
+      "lon": -69.2
+    }
+  },
+  {
+    "city": "Halifax, NS, Canada",
+    "lat": 44.6488,
+    "lon": -63.5752,
+    "type": "coastal",
+    "region": "canada"
+  },
+  {
+    "city": "St. John's, NL, Canada",
+    "lat": 47.5615,
+    "lon": -52.7126,
+    "type": "coastal",
+    "region": "canada"
+  },
+  {
+    "city": "Lisbon, Portugal",
+    "lat": 38.7223,
+    "lon": -9.1393,
+    "type": "coastal",
+    "region": "europe"
+  },
+  {
+    "city": "Porto, Portugal",
+    "lat": 41.1579,
+    "lon": -8.6291,
+    "type": "coastal",
+    "region": "europe"
+  },
+  {
+    "city": "Dublin, Ireland",
+    "lat": 53.3498,
+    "lon": -6.2603,
+    "type": "coastal",
+    "region": "europe"
+  },
+  {
+    "city": "Cork, Ireland",
+    "lat": 51.8985,
+    "lon": -8.4756,
+    "type": "coastal",
+    "region": "europe"
+  },
+  {
+    "city": "Reykjavik, Iceland",
+    "lat": 64.1466,
+    "lon": -21.9426,
+    "type": "coastal",
+    "region": "europe"
+  },
+  {
+    "city": "Bergen, Norway",
+    "lat": 60.3913,
+    "lon": 5.3221,
+    "type": "coastal",
+    "region": "europe"
+  },
+  {
+    "city": "Bordeaux, France",
+    "lat": 44.8378,
+    "lon": -0.5792,
+    "type": "coastal",
+    "region": "europe"
+  },
+  {
+    "city": "Brest, France",
+    "lat": 48.3904,
+    "lon": -4.4861,
+    "type": "coastal",
+    "region": "europe"
+  },
+  {
+    "city": "Plymouth, UK",
+    "lat": 50.3755,
+    "lon": -4.1427,
+    "type": "coastal",
+    "region": "europe"
+  },
+  {
+    "city": "Southampton, UK",
+    "lat": 50.9097,
+    "lon": -1.4044,
+    "type": "coastal",
+    "region": "europe"
+  },
+  {
+    "city": "Glasgow, Scotland, UK",
+    "lat": 55.8642,
+    "lon": -4.2518,
+    "type": "coastal",
+    "region": "europe"
+  },
+  {
+    "city": "Casablanca, Morocco",
+    "lat": 33.5731,
+    "lon": -7.5898,
+    "type": "coastal",
+    "region": "africa"
+  },
+  {
+    "city": "Las Palmas, Canary Islands, Spain",
+    "lat": 28.1248,
+    "lon": -15.4300,
+    "type": "coastal",
+    "region": "europe"
+  }
+]
