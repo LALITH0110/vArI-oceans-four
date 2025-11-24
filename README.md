@@ -9,7 +9,7 @@
 
 ---
 
-**🏆 3rd Place** - Grainger Computing Innovation Prize (out of ~150 students)
+**3rd Place** - Grainger Computing Innovation Prize (3rd of 26 teams drawn from ~250 students)
 
 ---
 
@@ -46,6 +46,22 @@ Traditional approaches rely on expensive supercomputer time or limited satellite
 - Impact assessments for proposed cleanup or prevention measures
 
 ## Technology Stack
+
+### AI Forecasting & Modeling (AI/)
+
+- **Hybrid physics + RL** - `AI/README.md` and `AI/docs/code_overview.md` cover a differentiable advection-diffusion core with reinforcement learning on top: Task A policies learn velocity corrections against GDP drifter tracks, and Task B policies plan cleanup routes. Pranav's `AI/Pranav/enhanced_ocean_plastic_rl.py` runs a 30-day DQN loop with ensemble particles, training dashboards, and RL-vs-physics comparison plots saved under `AI/Pranav/`.
+- **Monte Carlo uncertainty** - `AI/src/forecast.py` perturbs windage/diffusion and runs multi-run ensembles (e.g., 50 runs x 100 particles) to produce probability heatmaps and 50/90% radii; `AI/src/viz.py` renders trajectories and heatmaps for these ensembles.
+- **Data pipeline with simulated fallbacks** - `AI/src/data.py` loads CMEMS/HYCOM currents, ERA5 winds, and drifter CSVs, normalizes longitudes, and drops duplicates; synthetic datasets and demo scripts keep runs reproducible with simulated data when live products are unavailable.
+- **RL training specifics** - Policies use PPO (Task A/B) and DQN (Pranav demo) with replay buffers, target nets, epsilon decay, and reward shaping tied to drift error reduction; checkpoints and tensorboard-style plots live in `AI/runs/` and `AI/Pranav/`.
+- **Differentiable simulator** - `AI/src/sim.py` and `AI/src/config.py` house the North Atlantic box, windage, Stokes, diffusion, and longitude wrapping logic that both RL agents and Monte Carlo forecasters call.
+- **Metrics and evaluation** - `AI/src/forecast.py` reports 50/90% radii and centroid messages; Pranav's scripts compute error curves, path-length stats, and generate `government_report.txt` summarizing accuracy and operational recommendations.
+- **Visualization, QC, and pathfinding** - `AI/Pranav/ocean_driftcast` adds ocean-only masks, coastal beaching checks, QC reports, and an MDP (value-iteration) pathfinder plus a 19-city Streamlit UI (`AI/Pranav/ocean_driftcast/IMPLEMENTATION_SUMMARY.md`). Outputs include `rl_training_results.png`, `prediction_comparison.png`, `global_plastic_map.png`, and `government_report.txt`.
+- **Synthetic data stance** - RL demos and ensembles are reproducible with simulated data and synthetic fields when live CMEMS/ERA5 slices are missing; nothing is fabricated beyond those controlled simulations.
+- **Quick AI commands** - From `AI/`: `python -m main prepare` to inspect available data, `python -m main simulate --hours 24 --n-particles 2000` for a baseline, `python -m main forecast --start "2023-01-15T00:00:00" --pos "40,-40" --hours 24 --runs 50 --perturb 0.1` for Monte Carlo ensembles, and `python Pranav/enhanced_ocean_plastic_rl.py` for the RL + visualization demo (uses simulated data out of the box).
+- **More demos (Pranav)** - `AI/Pranav/global_ocean_plastic_prediction.py` and `...from_50_sources.py` render multi-source release maps; `ocean_plastic_flow.gif`, `trajectory_map.png`, `rl_vs_physics.png`, and `time_evolution.png` showcase RL vs physics baselines.
+- **City picker + pathfinder** - `AI/Pranav/ocean_driftcast/src/mdp.py` builds a 1-degree MDP with value iteration, 9 steering actions, and coastal penalties; CLI and Streamlit interfaces let judges pick 19 cities and watch 20-year drift animations with QC badges.
+- **Ensemble forecast outputs** - `AI/outputs/forecast_tracks.png`, `AI/outputs/prob_heatmap.png`, and `AI/outputs/ensemble_positions.csv` illustrate the probability cloud that drives cleanup routing decisions.
+- **Supporting docs** - `AI/docs/framework.md` outlines Task A/B definitions; `AI/docs/code_overview.md` maps modules; `AI/summary.md` explains the RL formulation and Monte Carlo ensemble logic used in competition materials.
 
 ### Client Application
 
