@@ -1,0 +1,8 @@
+{
+  "city": "New York, USA",
+  "n_particles": 500,
+  "beached": 1.0,
+  "ocean_reach_prob": 0.0,
+  "median_distance_km": 817.4580893642453,
+  "prob_class": "LOW"
+}

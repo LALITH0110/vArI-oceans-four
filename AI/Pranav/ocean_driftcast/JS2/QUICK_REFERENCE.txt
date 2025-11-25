@@ -1,0 +1,211 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║                    📁 FOLDER STRUCTURE QUICK REFERENCE                       ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 🎯 RECOMMENDED STRUCTURE                                                   ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+plastic-drift-demo/                     ← Create this folder
+│
+├── 📄 ui.py                            ⭐ ESSENTIAL - Streamlit web app
+├── 📄 drift_simulator.py               ⭐ ESSENTIAL - CLI program  
+├── 📄 seeds.json                       ⭐ ESSENTIAL - City data
+│
+├── 📄 README.md                        📖 Main documentation
+├── 📄 START_HERE.md                    📖 Quick start guide
+│
+├── 📁 outputs/                         📂 Auto-created, stores results
+│   ├── drift_demo.mp4                  🎬 Pre-generated animation
+│   ├── drift_demo.gif                  🎬 Animated GIF
+│   ├── snapshot_example.png            🖼️  Preview image
+│   ├── metrics.json                    📊 Statistics
+│   └── (your exports go here)          💾 User-generated files
+│
+└── 📁 docs/                            📂 Optional documentation folder
+    ├── INDEX.md                        🗺️  Navigation hub
+    ├── UI_GUIDE.md                     📘 UI tutorial
+    ├── RUN_INSTRUCTIONS.md             📗 Detailed instructions
+    ├── UPDATE_SUMMARY.md               📝 What's new
+    ├── CARTOPY_BASEMAP_NOTES.md        🗺️  Basemap details
+    ├── DELIVERABLES_SUMMARY.md         📋 Project report
+    ├── PACKAGE_CONTENTS.txt            📦 File listing
+    └── FOLDER_STRUCTURE.md             📁 This guide
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ ⚡ MINIMUM SETUP (Just 3 files!)                                           ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+my-project/
+├── ui.py                  ← Copy from outputs
+├── drift_simulator.py     ← Copy from outputs
+└── seeds.json             ← Copy from outputs
+
+That's ALL you need! Run: streamlit run ui.py
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 📍 CURRENT STATE (All files in /mnt/user-data/outputs/)                   ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+/mnt/user-data/outputs/
+├── ui.py                          ✓ Core program
+├── drift_simulator.py             ✓ Core program
+├── seeds.json                     ✓ Core data
+├── drift_demo.mp4                 ✓ Pre-generated content
+├── drift_demo.gif                 ✓ Pre-generated content
+├── snapshot_example.png           ✓ Pre-generated content
+├── metrics.json                   ✓ Pre-generated content
+├── metrics_new york.json          ✓ Pre-generated content
+├── README.md                      ✓ Documentation
+├── START_HERE.md                  ✓ Documentation
+├── INDEX.md                       ✓ Documentation
+├── UI_GUIDE.md                    ✓ Documentation
+├── RUN_INSTRUCTIONS.md            ✓ Documentation
+├── UPDATE_SUMMARY.md              ✓ Documentation
+├── CARTOPY_BASEMAP_NOTES.md       ✓ Documentation
+├── DELIVERABLES_SUMMARY.md        ✓ Documentation
+├── PACKAGE_CONTENTS.txt           ✓ Documentation
+└── FOLDER_STRUCTURE.md            ✓ Documentation
+
+Total: 18 files, 4.1 MB
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 🚀 SETUP OPTIONS                                                           ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+Option 1: Use As-Is (Quick Test)
+─────────────────────────────────
+  cd /mnt/user-data/outputs
+  streamlit run ui.py
+
+  ✓ Works immediately
+  ✗ Not organized
+  ✗ Hard to distribute
+
+Option 2: Minimal Reorganization (Recommended for Testing)
+───────────────────────────────────────────────────────────
+  mkdir ~/my-drift-demo
+  cp /mnt/user-data/outputs/{ui.py,drift_simulator.py,seeds.json} ~/my-drift-demo/
+  cd ~/my-drift-demo
+  streamlit run ui.py
+
+  ✓ Clean structure
+  ✓ Easy to understand
+  ✓ outputs/ auto-created
+
+Option 3: Full Organization (Best for Distribution)
+────────────────────────────────────────────────────
+  mkdir -p ~/plastic-drift-demo/{outputs,docs}
+  
+  # Core files to root
+  cp /mnt/user-data/outputs/{ui.py,drift_simulator.py,seeds.json} ~/plastic-drift-demo/
+  cp /mnt/user-data/outputs/{README.md,START_HERE.md} ~/plastic-drift-demo/
+  
+  # Media to outputs/
+  cp /mnt/user-data/outputs/{*.mp4,*.gif,*.png} ~/plastic-drift-demo/outputs/
+  cp /mnt/user-data/outputs/metrics*.json ~/plastic-drift-demo/outputs/
+  
+  # Docs to docs/
+  cp /mnt/user-data/outputs/{INDEX,UI_GUIDE,RUN_INSTRUCTIONS,UPDATE_SUMMARY}.md ~/plastic-drift-demo/docs/
+  cp /mnt/user-data/outputs/{CARTOPY_BASEMAP_NOTES,DELIVERABLES_SUMMARY,FOLDER_STRUCTURE}.md ~/plastic-drift-demo/docs/
+  cp /mnt/user-data/outputs/{PACKAGE_CONTENTS,QUICK_REFERENCE}.txt ~/plastic-drift-demo/docs/
+  
+  cd ~/plastic-drift-demo
+  streamlit run ui.py
+
+  ✓ Professional structure
+  ✓ Easy to distribute
+  ✓ Clear organization
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 🔧 FILE ROLES                                                              ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+Essential (MUST have):
+  ui.py                 Main interactive web interface (Streamlit)
+  drift_simulator.py    Command-line batch processor
+  seeds.json            City coordinates database (20 cities)
+
+Important (should have):
+  README.md             Technical documentation
+  START_HERE.md         Quick start guide
+
+Pre-generated (nice to have):
+  outputs/drift_demo.*  Example animations
+  outputs/metrics.json  Example statistics
+
+Reference (optional):
+  docs/*.md             Detailed documentation
+  docs/*.txt            Reference materials
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 💡 KEY POINTS                                                              ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+1. seeds.json MUST be in the same folder as the .py files
+   ├─ Both programs look for it in the current directory
+   └─ SEEDS_FILE = "seeds.json"
+
+2. outputs/ directory is auto-created if missing
+   ├─ No need to manually create it
+   └─ OUTPUT_DIR.mkdir(exist_ok=True)
+
+3. All documentation is optional
+   ├─ Programs work without any .md files
+   └─ Docs are for user reference only
+
+4. Currently everything is in /mnt/user-data/outputs/
+   ├─ This is fine for testing
+   └─ Reorganize for distribution
+
+5. Three files = working program
+   ├─ ui.py
+   ├─ drift_simulator.py
+   └─ seeds.json
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ ✅ VERIFICATION                                                            ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+After setup, test with:
+
+  # Check files exist
+  ls -l ui.py drift_simulator.py seeds.json
+
+  # Test CLI mode
+  python drift_simulator.py --city "New York"
+
+  # Test UI mode
+  streamlit run ui.py
+
+If all three work, you're ready! 🎉
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 📦 DISTRIBUTION PACKAGE                                                    ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+For sharing with others, ZIP this structure:
+
+plastic-drift-demo.zip
+  ├── ui.py
+  ├── drift_simulator.py
+  ├── seeds.json
+  ├── README.md
+  ├── START_HERE.md
+  ├── outputs/
+  │   ├── drift_demo.mp4
+  │   ├── drift_demo.gif
+  │   └── snapshot_example.png
+  └── docs/
+      └── (all documentation)
+
+Users extract and run: streamlit run ui.py
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║  🎯 BOTTOM LINE: Copy ui.py, drift_simulator.py, seeds.json to one folder   ║
+║     Then run: streamlit run ui.py                                           ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝

@@ -1,0 +1,22 @@
+[
+  {"city": "New York, USA", "lat": 40.7128, "lon": -74.0060, "region": "usa", "type": "coastal"},
+  {"city": "Miami, USA", "lat": 25.7617, "lon": -80.1918, "region": "usa", "type": "coastal"},
+  {"city": "Boston, USA", "lat": 42.3601, "lon": -71.0589, "region": "usa", "type": "coastal"},
+  {"city": "Charleston, USA", "lat": 32.7765, "lon": -79.9311, "region": "usa", "type": "coastal"},
+  {"city": "Baltimore, USA", "lat": 39.2904, "lon": -76.6122, "region": "usa", "type": "coastal"},
+  {"city": "Chicago, USA", "lat": 41.8781, "lon": -87.6298, "region": "usa", "type": "inland"},
+  {"city": "Philadelphia, USA", "lat": 39.9526, "lon": -75.1652, "region": "usa", "type": "coastal"},
+  {"city": "Toronto, Canada", "lat": 43.6532, "lon": -79.3832, "region": "canada", "type": "inland"},
+  {"city": "Halifax, Canada", "lat": 44.6488, "lon": -63.5752, "region": "canada", "type": "coastal"},
+  {"city": "Montreal, Canada", "lat": 45.5017, "lon": -73.5673, "region": "canada", "type": "inland"},
+  {"city": "St. John's, Canada", "lat": 47.5615, "lon": -52.7126, "region": "canada", "type": "coastal"},
+  {"city": "Lisbon, Portugal", "lat": 38.7223, "lon": -9.1393, "region": "europe", "type": "coastal"},
+  {"city": "Bordeaux, France", "lat": 44.8378, "lon": -0.5792, "region": "europe", "type": "coastal"},
+  {"city": "Dublin, Ireland", "lat": 53.3498, "lon": -6.2603, "region": "europe", "type": "coastal"},
+  {"city": "London, UK", "lat": 51.5074, "lon": -0.1278, "region": "europe", "type": "coastal"},
+  {"city": "Porto, Portugal", "lat": 41.1579, "lon": -8.6291, "region": "europe", "type": "coastal"},
+  {"city": "Barcelona, Spain", "lat": 41.3851, "lon": 2.1734, "region": "europe", "type": "coastal"},
+  {"city": "Casablanca, Morocco", "lat": 33.5731, "lon": -7.5898, "region": "africa", "type": "coastal"},
+  {"city": "Reykjavik, Iceland", "lat": 64.1466, "lon": -21.9426, "region": "europe", "type": "coastal"},
+  {"city": "Cork, Ireland", "lat": 51.8985, "lon": -8.4756, "region": "europe", "type": "coastal"}
+]

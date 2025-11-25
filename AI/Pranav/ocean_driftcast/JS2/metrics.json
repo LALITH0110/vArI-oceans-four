@@ -1,0 +1,26 @@
+[
+  {
+    "city": "New York, USA",
+    "n_particles": 800,
+    "beached": 1.0,
+    "ocean_reach_prob": 0.0,
+    "median_distance_km": 5745.461588883963,
+    "prob_class": "LOW"
+  },
+  {
+    "city": "Lisbon, Portugal",
+    "n_particles": 800,
+    "beached": 0.99625,
+    "ocean_reach_prob": 0.003750000000000031,
+    "median_distance_km": 12141.277154412945,
+    "prob_class": "LOW"
+  },
+  {
+    "city": "Chicago, USA",
+    "n_particles": 800,
+    "beached": 1.0,
+    "ocean_reach_prob": 0.0,
+    "median_distance_km": 6324.5900139495425,
+    "prob_class": "LOW"
+  }
+]
